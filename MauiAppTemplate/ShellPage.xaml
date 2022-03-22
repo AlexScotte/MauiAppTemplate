@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="MauiAppTemplate.ShellPage"
+       xmlns:local="clr-namespace:MauiAppTemplate"
+       xmlns:views="clr-namespace:MauiAppTemplate.Views"
+       Title="ShellPage"
+       BackgroundColor="White">
+    <TabBar>
+        <Tab Title="Main">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Title="Settings">
+            <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+        </Tab>
+    </TabBar>
+</Shell>
