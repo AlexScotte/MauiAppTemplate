@@ -5,13 +5,63 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            <Color x:Key="PrimaryColor">#512bdf</Color>
+            <!--<Color x:Key="PrimaryColor">#512bdf</Color>-->
+            <Color x:Key="PrimaryColor">#6200EE</Color>
+            <Color x:Key="PrimaryColorDark">#BB86FC</Color>
             <Color x:Key="SecondaryColor">White</Color>
 
-            <Style TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
-                <Setter Property="FontFamily" Value="OpenSansRegular" />
+            <Color x:Key="TextColor">#121212</Color>
+            <Color x:Key="TextColorDark">White</Color>
+            <Color x:Key="BackgroundColor">#F2F2F7</Color>
+            <Color x:Key="BackgroundColorDark">#121212</Color>
+            <Color x:Key="ElementBackground">White</Color>
+            <Color x:Key="ElementBackgroundDark">DarkGrey</Color>
+
+            <Style x:Key="BaseElement" TargetType="View">
+                <Setter Property="BackgroundColor" 
+                        Value="{AppThemeBinding Dark={StaticResource ElementBackgroundDark},
+                                                Light={StaticResource ElementBackground}}" />
             </Style>
+
+            <!--#region Label -->
+
+            <!--Base label-->
+            <Style x:Key="BaseLabel" TargetType="Label">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Dark={StaticResource TextColorDark},
+                                                Light={StaticResource TextColor}}" />
+            </Style>
+
+            <Style x:Key="LabelMicro" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style x:Key="LabelSmall" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+
+            <Style x:Key="LabelMedium" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+            <Style x:Key="LabelLarge" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+
+            <!--#endregion-->
+
+
+            <Style x:Key="AppThemeView" TargetType="View">
+                <Setter Property="BackgroundColor" 
+                        Value="{AppThemeBinding Dark={StaticResource BackgroundColorDark},
+                                                Light={StaticResource BackgroundColor}}" />
+            </Style>
+
+            <!--Content page Background change not working for now in MAUI-->
+            <!--<Style x:Key="AppThemePage" TargetType="Page">
+                <Setter Property="BackgroundColor" 
+                        Value="{AppThemeBinding Dark={StaticResource BackgroundColorDark},
+                                                Light={StaticResource BackgroundColor}}" />
+            </Style>-->
 
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />

@@ -4,8 +4,27 @@
        x:Class="MauiAppTemplate.ShellPage"
        xmlns:local="clr-namespace:MauiAppTemplate"
        xmlns:views="clr-namespace:MauiAppTemplate.Views"
-       Title="ShellPage"
-       BackgroundColor="White">
+       Style="{DynamicResource AppThemePage}"
+       Title="ShellPage">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}" />
+                <Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+                <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Dark=#95FFFFFF, Light=#95000000}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Dark=#95FFFFFF, Light=#95000000}" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
     <TabBar>
         <Tab Title="Main">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
