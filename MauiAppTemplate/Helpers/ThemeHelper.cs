@@ -1,4 +1,5 @@
 ﻿using MauiAppTemplate.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,12 @@ namespace MauiAppTemplate.Helpers
 {
     public static class ThemeHelper
     {
-        public static void SetTheme()
+        /// <summary>
+        /// There is some problems with status bar color, mostly with ligth status bar and android version >= 30, 
+        /// sometime the icon color stay white with light theme
+        /// </summary>
+        /// <param name="changeStatusBarColor"></param>
+        public static void SetTheme(bool changeStatusBarColor = false)
         {
             switch (SettingsHelper.Theme)
             {
@@ -28,11 +34,12 @@ namespace MauiAppTemplate.Helpers
             }
 
             var nav = App.Current.MainPage as NavigationPage;
-
-            var e = DependencyService.Get<IEnvironmentService>();
+            EnvironmentService environmentService = new();
             if (App.Current.RequestedTheme == OSAppTheme.Dark)
             {
-                e?.SetStatusBarColor(Colors.Black, false);
+                if (changeStatusBarColor)
+                    environmentService.SetStatusBarColor(Colors.Black, false);
+
                 if (nav != null)
                 {
                     nav.BarBackgroundColor = Colors.Black;
@@ -41,7 +48,9 @@ namespace MauiAppTemplate.Helpers
             }
             else
             {
-                e?.SetStatusBarColor(Colors.White, true);
+                if (changeStatusBarColor)
+                    environmentService.SetStatusBarColor(Colors.White, true);
+
                 if (nav != null)
                 {
                     nav.BarBackgroundColor = Colors.White;

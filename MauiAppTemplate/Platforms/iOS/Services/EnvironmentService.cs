@@ -7,11 +7,11 @@ using UIKit;
 using Foundation;
 using MauiAppTemplate.Services;
 
-namespace MauiAppTemplate.Platforms
+namespace MauiAppTemplate.Services
 {
-    public partial class EnvironmentService : IEnvironmentService
+    public partial class EnvironmentService
     {
-        public void SetStatusBarColor(Color color, bool darkStatusBarTint)
+        public partial void SetStatusBarColor(Color color, bool isLight)
         {
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             {
@@ -29,7 +29,7 @@ namespace MauiAppTemplate.Platforms
                     statusBar.BackgroundColor = iosColor;
                 }
             }
-            var style = darkStatusBarTint ? UIStatusBarStyle.DarkContent : UIStatusBarStyle.LightContent;
+            var style = isLight ? UIStatusBarStyle.DarkContent : UIStatusBarStyle.LightContent;
             UIApplication.SharedApplication.SetStatusBarStyle(style, false);
             Platform.GetCurrentUIViewController()?.SetNeedsStatusBarAppearanceUpdate();
         }

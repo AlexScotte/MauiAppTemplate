@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MauiAppTemplate.Services
 {
-    public interface IEnvironmentService
+    public partial class EnvironmentService
     {
-        void SetStatusBarColor(Color color, bool darkStatusBarTint);
+        public partial void SetStatusBarColor(Color color, bool isLight);
     }
 }

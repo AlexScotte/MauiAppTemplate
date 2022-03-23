@@ -1,4 +1,6 @@
-﻿namespace MauiAppTemplate;
+﻿using MauiAppTemplate.Services;
+
+namespace MauiAppTemplate;
 
 public static class MauiProgram
 {

@@ -14,11 +14,6 @@ public partial class SettingsPage : ContentPage
         InitializeComponent();
     }
 
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
-    }
-
     private void OnThemeTapped(object sender, EventArgs e)
     {
         if (e is TappedEventArgs tapEventArg)
