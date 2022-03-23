@@ -1,4 +1,6 @@
-﻿using MauiAppTemplate.Services;
+﻿using MauiAppTemplate.Resources.Languages;
+using MauiAppTemplate.Services;
+using System.Globalization;
 
 namespace MauiAppTemplate;
 
@@ -13,6 +15,8 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 			});
+
+       
 
 		return builder.Build();
 	}

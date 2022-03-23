@@ -43,5 +43,7 @@
             </components:ThemeFrame.GestureRecognizers>
         </components:ThemeFrame>
 
+
+        <Button Grid.Row="1" Clicked="Button_Clicked" />
     </Grid>
 </ContentPage>

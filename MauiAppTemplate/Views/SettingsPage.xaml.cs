@@ -1,5 +1,7 @@
 using MauiAppTemplate.Enums;
 using MauiAppTemplate.Helpers;
+using MauiAppTemplate.Resources.Languages;
+using System.Globalization;
 
 namespace MauiAppTemplate.Views;
 
@@ -39,5 +41,10 @@ public partial class SettingsPage : ContentPage
             OnPropertyChanged(nameof(IsLightThemeSelected));
             OnPropertyChanged(nameof(IsDarkThemeSelected));
         }
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        ResourceLoader.Instance.SetCultureInfo(new CultureInfo("en-US"));
     }
 }

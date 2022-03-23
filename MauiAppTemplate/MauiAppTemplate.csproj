@@ -53,6 +53,35 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.3" />
+	  <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Resources\Languages\AppRessources.en.Designer.cs">
+	    <DependentUpon>AppRessources.en.resx</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="Resources\Languages\AppRessources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>AppRessources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Languages\AppRessources.en.resx">
+	    <LastGenOutput>AppRessources.en.Designer.cs</LastGenOutput>
+	    <Generator>ResXFileCodeGenerator</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Languages\AppRessources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>AppRessources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Components\ThemeFrame.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
