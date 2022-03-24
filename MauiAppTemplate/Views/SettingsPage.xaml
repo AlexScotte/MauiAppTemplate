@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:components="clr-namespace:MauiAppTemplate.Views.Components"
              x:Class="MauiAppTemplate.Views.SettingsPage"
              x:Name="page"
@@ -12,33 +13,33 @@
           RowDefinitions="Auto,Auto"
           HorizontalOptions="Center" Padding="10,10,10,10"
           RowSpacing="10">
-
+        
         <components:ThemeFrame Grid.Column="0" 
                                Text="System" 
-                               IsSelected="{Binding IsSystemThemeSelected, Source={x:Reference page}}" >
+                               IsSelected="{Binding IsSystemThemeSelected}" >
             <components:ThemeFrame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="OnThemeTapped"
+                    Command="{Binding OnThemeTappedCommand}"
                     CommandParameter="0"/>
             </components:ThemeFrame.GestureRecognizers>
         </components:ThemeFrame>
 
         <components:ThemeFrame Grid.Column="1" 
                                Text="Light"
-                               IsSelected="{Binding IsLightThemeSelected, Source={x:Reference page}}">
+                               IsSelected="{Binding IsLightThemeSelected}">
             <components:ThemeFrame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="OnThemeTapped"
+                    Command="{Binding OnThemeTappedCommand}"
                     CommandParameter="1"/>
             </components:ThemeFrame.GestureRecognizers>
         </components:ThemeFrame>
 
         <components:ThemeFrame Grid.Column="2" 
                                Text="Dark"
-                               IsSelected="{Binding IsDarkThemeSelected, Source={x:Reference page}}">
+                               IsSelected="{Binding IsDarkThemeSelected}">
             <components:ThemeFrame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="OnThemeTapped"
+                    Command="{Binding OnThemeTappedCommand}"
                     CommandParameter="2"/>
             </components:ThemeFrame.GestureRecognizers>
         </components:ThemeFrame>

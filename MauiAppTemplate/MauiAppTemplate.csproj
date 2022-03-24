@@ -53,6 +53,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre7" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Components\ThemeFrame.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
