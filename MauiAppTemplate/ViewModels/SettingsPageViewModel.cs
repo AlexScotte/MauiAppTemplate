@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MauiAppTemplate.Common.ViewModels;
 
 namespace MauiAppTemplate.ViewModels
 {
@@ -17,6 +18,10 @@ namespace MauiAppTemplate.ViewModels
 
         public ICommand OnThemeTappedCommand => new Command<string>(OnThemeTapped);
 
+        public SettingsPageViewModel()
+        {
+
+        }
 
         private void OnThemeTapped(string newThemeIndex)
         {

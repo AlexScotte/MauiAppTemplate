@@ -57,6 +57,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\MauiAppTemplate.Common\MauiAppTemplate.Common.csproj" />
+	  <ProjectReference Include="..\MauiAppTemplate.Service\MauiAppTemplate.Service.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Components\ThemeFrame.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
