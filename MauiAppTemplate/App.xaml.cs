@@ -1,6 +1,7 @@
-﻿using MauiAppTemplate.Helpers;
+﻿using MauiAppTemplate.Common;
+using MauiAppTemplate.Helpers;
 using MauiAppTemplate.Resources.Languages;
-using MauiAppTemplate.Views;
+using MauiAppTemplate.ViewModels;
 using System.Reflection;
 using System.Resources;
 
@@ -8,13 +9,13 @@ namespace MauiAppTemplate;
 
 public partial class App : Application
 {
-	public App()
+    public App()
 	{
 		InitializeComponent();
 
-        new ResourceLoader(new ResourceManager(ResourceLoader.ResourceId, typeof(App).GetTypeInfo().Assembly));
+        new ResourceLoader(typeof(AppResources));
 
-        MainPage = new ShellPage();
+        MainPage = new ShellPage(new ShellPageViewModel());
 
         ThemeHelper.SetTheme();
     }

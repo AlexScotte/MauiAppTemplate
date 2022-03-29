@@ -58,26 +58,35 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Resources\Languages\AppRessources.en.Designer.cs">
-	    <DependentUpon>AppRessources.en.resx</DependentUpon>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre7" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\MauiAppTemplate.Service\MauiAppTemplate.Service.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Resources\Languages\AppResources.Designer.cs">
+	    <DependentUpon>AppResources.resx</DependentUpon>
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	  </Compile>
-	  <Compile Update="Resources\Languages\AppRessources.Designer.cs">
+	  <Compile Update="Resources\Languages\AppResources.en.Designer.cs">
+	    <DependentUpon>AppResources.en.resx</DependentUpon>
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
-	    <DependentUpon>AppRessources.resx</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Resources\Languages\AppRessources.en.resx">
-	    <LastGenOutput>AppRessources.en.Designer.cs</LastGenOutput>
+	  <EmbeddedResource Update="Resources\Languages\AppResources.en.resx">
+	    <SubType>Designer</SubType>
+	    <LastGenOutput>AppResources.en.Designer.cs</LastGenOutput>
 	    <Generator>ResXFileCodeGenerator</Generator>
 	  </EmbeddedResource>
-	  <EmbeddedResource Update="Resources\Languages\AppRessources.resx">
+	  <EmbeddedResource Update="Resources\Languages\AppResources.resx">
+	    <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
 	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>AppRessources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	</ItemGroup>
 

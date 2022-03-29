@@ -5,6 +5,7 @@
        xmlns:local="clr-namespace:MauiAppTemplate"
        xmlns:views="clr-namespace:MauiAppTemplate.Views"
        xmlns:rsx="clr-namespace:MauiAppTemplate.Resources.Languages"
+       xmlns:ext="clr-namespace:MauiAppTemplate.Extensions"
        Style="{DynamicResource AppThemePage}"
        Title="ShellPage">
 
@@ -27,10 +28,10 @@
     </Shell.Resources>
 
     <TabBar>
-        <Tab Title="{Binding [Main], Source={x:Static rsx:ResourceLoader.Instance}}">
+        <Tab Title="{ext:Translate Main}">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
-        <Tab Title="{Binding [Settings], Source={x:Static rsx:ResourceLoader.Instance}}">
+        <Tab Title="{ext:Translate Settings}">
             <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
         </Tab>
     </TabBar>

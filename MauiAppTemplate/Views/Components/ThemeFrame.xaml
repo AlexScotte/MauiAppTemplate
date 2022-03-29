@@ -7,7 +7,6 @@
         Style="{StaticResource BaseElement}"
         Padding="5"
         CornerRadius="10">
-
         <Frame.Triggers>
             <DataTrigger TargetType="Frame" 
                              Binding="{Binding IsSelected, Source={x:Reference view}}" 
