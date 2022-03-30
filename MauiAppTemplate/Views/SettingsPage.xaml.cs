@@ -9,9 +9,9 @@ namespace MauiAppTemplate.Views;
 
 public partial class SettingsPage : ContentPage
 {
-    public SettingsPage(SettingsPageViewModel vm)
+    public SettingsPage()
     {
-        BindingContext = vm;
+        BindingContext = new SettingsPageViewModel();
         InitializeComponent();
     }
     private void Button_Clicked(object sender, EventArgs e)

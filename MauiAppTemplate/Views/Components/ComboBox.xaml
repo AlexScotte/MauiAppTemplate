@@ -10,7 +10,7 @@
     <StackLayout Orientation="Vertical">
 
         <Frame x:Name="frame" 
-               ZIndex="1" BackgroundColor="Red"
+               ZIndex="1"
                CornerRadius="5" >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1"
@@ -31,8 +31,19 @@
             <ListView BackgroundColor="Red"
                       MaximumHeightRequest="150"
                       SelectionMode="Single"
-                      ItemSelected="ListView_ItemSelected">
-                <ListView.ItemsSource>
+                      ItemSelected="ListView_ItemSelected"
+                      ItemsSource="{Binding Items, Source={x:Reference view}}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="test"/>
+                            <!--<StackLayout Orientation="Horizontal" IsEnabled="{Binding IsEnabled}">
+                                <Label Text="{Binding Label}"/>
+                            </StackLayout>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <!--<ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Baboon</x:String>
                         <x:String>Capuchin Monkey</x:String>
@@ -42,7 +53,7 @@
                         <x:String>Howler Monkey</x:String>
                         <x:String>Japanese Macaque</x:String>
                     </x:Array>
-                </ListView.ItemsSource>
+                </ListView.ItemsSource>-->
             </ListView>
         </Frame>
     </StackLayout>

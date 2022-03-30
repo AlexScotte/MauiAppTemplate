@@ -7,9 +7,9 @@ namespace MauiAppTemplate;
 
 public partial class ShellPage
 {
-	public ShellPage(ShellPageViewModel vm)
+	public ShellPage()
 	{
-		BindingContext = vm;
+		BindingContext = new ShellPageViewModel();
 		InitializeComponent();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MauiAppTemplate.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Essentials;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,21 +22,21 @@ namespace MauiAppTemplate.Helpers
             {
                 //default
                 case 0:
-                    App.Current.UserAppTheme = OSAppTheme.Unspecified;
+                    App.Current.UserAppTheme = AppTheme.Unspecified;
                     break;
                 //light
                 case 1:
-                    App.Current.UserAppTheme = OSAppTheme.Light;
+                    App.Current.UserAppTheme = AppTheme.Light;
                     break;
                 //dark
                 case 2:
-                    App.Current.UserAppTheme = OSAppTheme.Dark;
+                    App.Current.UserAppTheme = AppTheme.Dark;
                     break;
             }
 
             var nav = App.Current.MainPage as NavigationPage;
             EnvironmentService environmentService = new();
-            if (App.Current.RequestedTheme == OSAppTheme.Dark)
+            if (App.Current.RequestedTheme == AppTheme.Dark)
             {
                 if (changeStatusBarColor)
                     environmentService.SetStatusBarColor(Colors.Black, false);
