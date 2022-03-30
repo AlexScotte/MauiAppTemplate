@@ -18,42 +18,43 @@
             </Frame.GestureRecognizers>
 
 
-            <Label Text="{Binding SelectedItem, Source={x:Reference view}}"
+            <Label Text="{Binding SelectedItem.Label, Source={x:Reference view}}"
                    HorizontalTextAlignment="Start" 
-                   TextColor="Black"/>
+                   TextColor="{Binding TextColor, Source={x:Reference view}}"/>
         </Frame>
         
         <Frame ZIndex="0" 
                CornerRadius="5" 
-               Padding="1"
+               Padding="5"
                Margin="0,-5,0,0"
-               IsVisible="{Binding IsExpanded, Source={x:Reference view}}">
-            <ListView BackgroundColor="Red"
+               IsVisible="{Binding IsExpanded, Source={x:Reference view}}"
+               BackgroundColor="{Binding SelectorBackgroundColor, Source={x:Reference view}}">
+            <ListView x:Name="SelectorList" 
                       MaximumHeightRequest="150"
                       SelectionMode="Single"
                       ItemSelected="ListView_ItemSelected"
                       ItemsSource="{Binding Items, Source={x:Reference view}}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Label Text="test"/>
-                            <!--<StackLayout Orientation="Horizontal" IsEnabled="{Binding IsEnabled}">
-                                <Label Text="{Binding Label}"/>
-                            </StackLayout>-->
+                        <ViewCell IsEnabled="{Binding IsEnabled}">
+                            <StackLayout Orientation="Horizontal" >
+                                <StackLayout.Triggers>
+                                    <DataTrigger TargetType="{x:Type StackLayout}"
+                                                 Binding="{Binding IsEnabled}"
+                                                 Value="false">
+                                        <Setter Property="Opacity" Value="0.3"/>
+                                    </DataTrigger>
+                                </StackLayout.Triggers>
+                                <Label HorizontalOptions="FillAndExpand"
+                                       HorizontalTextAlignment="Start"
+                                       VerticalOptions="CenterAndExpand"
+                                       VerticalTextAlignment="Center" 
+                                       Text="{Binding Label}"
+                                       TextColor="{Binding SelectorTextColor, Source={x:Reference view}}"/>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                <!--<ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Baboon</x:String>
-                        <x:String>Capuchin Monkey</x:String>
-                        <x:String>Blue Monkey</x:String>
-                        <x:String>Squirrel Monkey</x:String>
-                        <x:String>Golden Lion Tamarin</x:String>
-                        <x:String>Howler Monkey</x:String>
-                        <x:String>Japanese Macaque</x:String>
-                    </x:Array>
-                </ListView.ItemsSource>-->
             </ListView>
         </Frame>
     </StackLayout>
