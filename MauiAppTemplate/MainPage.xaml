@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:components="clr-namespace:MauiAppTemplate.Views.Components"
              x:Class="MauiAppTemplate.MainPage"
+             x:Name="page"
              Title="MainPage">
 
     <Grid Style="{StaticResource AppThemeView}"
@@ -17,7 +18,7 @@
                VerticalOptions="CenterAndExpand" 
                HorizontalOptions="CenterAndExpand" />
 
-        <components:ComboBox Grid.Row="1"/>
+        <components:ComboBox Grid.Row="1" Items="{Binding MyItems, Source={x:Reference page}}"/>
 
         <Label Grid.Row="2"
                Style="{StaticResource LabelSmall}"

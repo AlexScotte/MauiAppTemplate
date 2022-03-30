@@ -15,7 +15,7 @@ public partial class App : Application
 
         new ResourceLoader(typeof(AppResources));
 
-        MainPage = new ShellPage(new ShellPageViewModel());
+        MainPage = new ShellPage();
 
         ThemeHelper.SetTheme();
     }

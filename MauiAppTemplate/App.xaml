@@ -15,7 +15,7 @@
             <Color x:Key="BackgroundColor">#F2F2F7</Color>
             <Color x:Key="BackgroundColorDark">#121212</Color>
             <Color x:Key="ElementBackground">White</Color>
-            <Color x:Key="ElementBackgroundDark">DarkGrey</Color>
+            <Color x:Key="ElementBackgroundDark">#969698</Color>
 
             <Style x:Key="BaseElement" TargetType="View">
                 <Setter Property="BackgroundColor" 

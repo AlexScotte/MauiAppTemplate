@@ -24,9 +24,8 @@ public static class MauiProgram
 
         #region View model
 
-        builder.Services.AddTransient<MainPageViewModel>();
-		builder.Services.AddTransient<SettingsPageViewModel>();
-        builder.Services.AddTransient<SettingsPageViewModel>(); 
+        //builder.Services.AddTransient<MainPageViewModel>();
+		//builder.Services.AddTransient<SettingsPageViewModel>();
 
 		#endregion
 
