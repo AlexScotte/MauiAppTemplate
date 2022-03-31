@@ -13,7 +13,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-        new ResourceLoader(typeof(AppResources));
+        new ResourceLoader(typeof(AppResources), SettingsHelper.LanguagePreference);
 
         MainPage = new ShellPage();
 

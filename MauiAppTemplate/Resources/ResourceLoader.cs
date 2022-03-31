@@ -10,42 +10,41 @@ using System.Threading.Tasks;
 
 namespace MauiAppTemplate.Common
 {
-	public class ResourceLoader : INotifyPropertyChanged
-	{
-		const string DEFAULT_LANGUAGE = "fr";
-		public static ResourceLoader Instance { get; private set; }
+    public class ResourceLoader : INotifyPropertyChanged
+    {
+        public static ResourceLoader Instance { get; private set; }
 
-		ResourceManager _resourceManager;
-		public CultureInfo _currentCultureInfo;
+        ResourceManager _resourceManager;
+        public CultureInfo _currentCultureInfo;
 
-		public event PropertyChangedEventHandler PropertyChanged;
-		public string this[string key] => GetString(key);
+        public event PropertyChangedEventHandler PropertyChanged;
+        public string this[string key] => GetString(key);
 
-		public ResourceLoader(Type resource, CultureInfo cultureInfo)
-		{
-			_currentCultureInfo = cultureInfo;
-			_resourceManager = new ResourceManager(resource);
-			Instance = this;	
-		}
+        public ResourceLoader(Type resource, string language)
+            : this(resource, new CultureInfo(language))
+        { }
 
-		public ResourceLoader(Type resource, string language = null)
-		  : this(resource, new CultureInfo(language ?? DEFAULT_LANGUAGE))
-		{ }
+        public ResourceLoader(Type resource, CultureInfo cultureInfo)
+        {
+            _currentCultureInfo = cultureInfo;
+            _resourceManager = new ResourceManager(resource);
+            Instance = this;
+        }
 
-		public string GetString(string resourceName)
-		{
-			string stringRes = _resourceManager.GetString(resourceName, _currentCultureInfo);
-			return stringRes;
-		}
+        public string GetString(string resourceName)
+        {
+            string stringRes = _resourceManager.GetString(resourceName, _currentCultureInfo);
+            return stringRes;
+        }
 
 
-		public void SetCultureInfo(CultureInfo cultureInfo)
-		{
-			_currentCultureInfo = cultureInfo;
-			CultureInfo.CurrentCulture = _currentCultureInfo;
-			CultureInfo.CurrentUICulture = _currentCultureInfo;
+        public void SetCultureInfo(CultureInfo cultureInfo)
+        {
+            _currentCultureInfo = cultureInfo;
+            CultureInfo.CurrentCulture = _currentCultureInfo;
+            CultureInfo.CurrentUICulture = _currentCultureInfo;
 
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
-		}
-	}
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
+        }
+    }
 }

@@ -14,8 +14,4 @@ public partial class SettingsPage : ContentPage
         BindingContext = new SettingsPageViewModel();
         InitializeComponent();
     }
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-        ResourceLoader.Instance.SetCultureInfo(new CultureInfo("en"));
-    }
 }

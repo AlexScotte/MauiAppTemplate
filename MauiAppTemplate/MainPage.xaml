@@ -8,22 +8,13 @@
     <Grid Style="{StaticResource AppThemeView}"
           ColumnDefinitions="*"
           ColumnSpacing="10"
-          RowDefinitions="Auto,Auto,Auto"
+          RowDefinitions="Auto,Auto"
           HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="10,10,10,10"
           RowSpacing="10">
 
         <Label Grid.Row="0" 
                Style="{StaticResource LabelSmall}"
                Text="Welcome to main page !"
-               VerticalOptions="CenterAndExpand" 
-               HorizontalOptions="CenterAndExpand" />
-
-        <components:ComboBox Grid.Row="1" Items="{Binding MyItems, Source={x:Reference page}}"/>
-
-        <Label Grid.Row="2"
-               Style="{StaticResource LabelSmall}"
-               Text="Welcome to main page !"
-               TextColor="Red"
                VerticalOptions="CenterAndExpand" 
                HorizontalOptions="CenterAndExpand" />
 

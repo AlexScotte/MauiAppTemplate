@@ -7,6 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MauiAppTemplate.Common.ViewModels;
+using MauiAppTemplate.Views.Components;
+using MauiAppTemplate.Extensions;
+using MauiAppTemplate.Common;
+using System.Globalization;
 
 namespace MauiAppTemplate.ViewModels
 {
@@ -17,6 +21,51 @@ namespace MauiAppTemplate.ViewModels
         public bool IsDarkThemeSelected => (int)Theme.Dark == (int)SettingsHelper.Theme;
 
         public ICommand OnThemeTappedCommand => new Command<string>(OnThemeTapped);
+        public ICommand LanguageChangedCommand => new Command<ComboBox.Item>(OnLanguageChanged);
+
+        private IList<ComboBox.Item> _languages;
+        public IList<ComboBox.Item> Languages
+        {
+            get => _languages;
+            set => SetProperty(ref _languages, value);
+        }
+
+        private ComboBox.Item _selectedLanguage;
+        public ComboBox.Item SelectedLanguage
+        {
+            get => _selectedLanguage;
+            set => SetProperty(ref _selectedLanguage, value);
+        }
+
+        public SettingsPageViewModel()
+        {
+            LoadAvailableLanguages();
+        }
+
+        private void LoadAvailableLanguages()
+        {
+            Languages = new List<ComboBox.Item>();
+
+            foreach (Languages language in (Languages[])Enum.GetValues(typeof(Languages)))
+            {
+                Languages.Add(new()
+                {
+                    Data = language,
+                    Label = language.GetDisplayAttribute(AttributeProperty.Name),
+                });
+            }
+
+            SelectedLanguage = Languages.FirstOrDefault(l => l.Data.ToString().ToLower() == SettingsHelper.LanguagePreference);
+        }
+
+        private void OnLanguageChanged(ComboBox.Item arg)
+        {
+            if(arg != null && arg.Data is Languages newLanguage)
+            {
+                SettingsHelper.LanguagePreference = newLanguage.ToString();
+                ResourceLoader.Instance.SetCultureInfo(new CultureInfo(SettingsHelper.LanguagePreference));
+            }
+        }
 
         private void OnThemeTapped(string newThemeIndex)
         {

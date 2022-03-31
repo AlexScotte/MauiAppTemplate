@@ -8,46 +8,56 @@
              x:Name="page"
              Title="SettingsPage">
 
-    <Grid Style="{StaticResource AppThemeView}"
-          ColumnDefinitions="*,*,*"
-          ColumnSpacing="10"
-          RowDefinitions="Auto,Auto,Auto"
-          HorizontalOptions="Center" Padding="10,10,10,10"
-          RowSpacing="10">
-        
-        <components:ThemeFrame Grid.Column="0" 
+    <Grid RowDefinitions="Auto, Auto, Auto"
+          Padding="10,10,10,10"
+          RowSpacing="10"
+          Style="{StaticResource AppThemeView}">
+
+        <Grid Grid.Row="0"
+              HeightRequest="100"
+              ColumnDefinitions="*,*,*"
+              ColumnSpacing="10"
+              HorizontalOptions="Start">
+
+            <components:ThemeFrame Grid.Column="0" 
                                Text="System" 
                                IsSelected="{Binding IsSystemThemeSelected}" >
-            <components:ThemeFrame.GestureRecognizers>
-                <TapGestureRecognizer
+                <components:ThemeFrame.GestureRecognizers>
+                    <TapGestureRecognizer
                     Command="{Binding OnThemeTappedCommand}"
                     CommandParameter="0"/>
-            </components:ThemeFrame.GestureRecognizers>
-        </components:ThemeFrame>
+                </components:ThemeFrame.GestureRecognizers>
+            </components:ThemeFrame>
 
-        <components:ThemeFrame Grid.Column="1" 
+            <components:ThemeFrame Grid.Column="1" 
                                Text="Light"
                                IsSelected="{Binding IsLightThemeSelected}">
-            <components:ThemeFrame.GestureRecognizers>
-                <TapGestureRecognizer
+                <components:ThemeFrame.GestureRecognizers>
+                    <TapGestureRecognizer
                     Command="{Binding OnThemeTappedCommand}"
                     CommandParameter="1"/>
-            </components:ThemeFrame.GestureRecognizers>
-        </components:ThemeFrame>
+                </components:ThemeFrame.GestureRecognizers>
+            </components:ThemeFrame>
 
-        <components:ThemeFrame Grid.Column="2" 
+            <components:ThemeFrame Grid.Column="2" 
                                Text="Dark"
                                IsSelected="{Binding IsDarkThemeSelected}">
-            <components:ThemeFrame.GestureRecognizers>
-                <TapGestureRecognizer
+                <components:ThemeFrame.GestureRecognizers>
+                    <TapGestureRecognizer
                     Command="{Binding OnThemeTappedCommand}"
                     CommandParameter="2"/>
-            </components:ThemeFrame.GestureRecognizers>
-        </components:ThemeFrame>
+                </components:ThemeFrame.GestureRecognizers>
+            </components:ThemeFrame>
+        </Grid>
 
-
-        <Button Grid.Row="1" Clicked="Button_Clicked" />
+        <components:ComboBox Grid.Row="1" 
+                             HorizontalOptions="FillAndExpand"
+                             Items="{Binding Languages}" 
+                             SelectedItem="{Binding SelectedLanguage}"
+                             SelectionChangedCommand="{Binding LanguageChangedCommand}"
+                             SelectorMaximumHeightRequest="150"/>
 
         <Label Grid.Row="2" Text="{ext:Translate Main}" Style="{x:StaticResource LabelMedium}"/>
     </Grid>
+
 </ContentPage>
