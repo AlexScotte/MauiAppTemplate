@@ -22,40 +22,43 @@
                    HorizontalTextAlignment="Start" 
                    TextColor="{Binding TextColor, Source={x:Reference view}}"/>
         </Frame>
-        
+
         <Frame ZIndex="0" 
                CornerRadius="5" 
                Padding="5"
                Margin="0,-5,0,0"
                IsVisible="{Binding IsExpanded, Source={x:Reference view}}"
                BackgroundColor="{Binding SelectorBackgroundColor, Source={x:Reference view}}">
-            <ListView x:Name="SelectorList" 
-                      MaximumHeightRequest="150"
-                      SelectionMode="Single"
-                      ItemSelected="ListView_ItemSelected"
-                      ItemsSource="{Binding Items, Source={x:Reference view}}">
-                <ListView.ItemTemplate>
+
+            <CollectionView x:Name="SelectorList"
+                            SelectionMode="Single"
+                            SelectionChanged="SelectedItemChanged"
+                            MaximumHeightRequest="{Binding SelectorMaximumHeightRequest, Source={x:Reference view}}"
+                            ItemsSource="{Binding Items, Source={x:Reference view}}">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell IsEnabled="{Binding IsEnabled}">
-                            <StackLayout Orientation="Horizontal" >
-                                <StackLayout.Triggers>
-                                    <DataTrigger TargetType="{x:Type StackLayout}"
-                                                 Binding="{Binding IsEnabled}"
-                                                 Value="false">
-                                        <Setter Property="Opacity" Value="0.3"/>
-                                    </DataTrigger>
-                                </StackLayout.Triggers>
-                                <Label HorizontalOptions="FillAndExpand"
+                        <StackLayout Orientation="Horizontal" 
+                                     IsEnabled="{Binding IsEnabled}"
+                                     HeightRequest="50">
+                            <StackLayout.Triggers>
+                                <DataTrigger TargetType="{x:Type StackLayout}"
+                                             Binding="{Binding IsEnabled}"
+                                             Value="false">
+                                    <Setter Property="Opacity" Value="0.3"/>
+                                </DataTrigger>
+                            </StackLayout.Triggers>
+                            
+                            <Label HorizontalOptions="FillAndExpand"
                                        HorizontalTextAlignment="Start"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center" 
                                        Text="{Binding Label}"
                                        TextColor="{Binding SelectorTextColor, Source={x:Reference view}}"/>
-                            </StackLayout>
-                        </ViewCell>
+                            
+                        </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Frame>
     </StackLayout>
 </ContentView>
