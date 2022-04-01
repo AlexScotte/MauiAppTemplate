@@ -4,6 +4,8 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:components="clr-namespace:MauiAppTemplate.Views.Components"
              xmlns:ext="clr-namespace:MauiAppTemplate.Extensions"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             xmlns:materialDesign="clr-namespace:MaterialDesign"
              x:Class="MauiAppTemplate.Views.SettingsPage"
              x:Name="page"
              Title="SettingsPage">
@@ -19,29 +21,35 @@
               ColumnSpacing="10"
               HorizontalOptions="Start">
 
-            <components:ThemeFrame Grid.Column="0" 
-                               Text="System" 
-                               IsSelected="{Binding IsSystemThemeSelected}" >
+            <components:ThemeFrame Grid.Column="0"
+                                   IconFontFamily="MDR"
+                                   Icon="{x:Static materialDesign:MaterialDesignIcons.Smartphone}"
+                                   Text="System" 
+                                   IsSelected="{Binding IsSystemThemeSelected}" >
                 <components:ThemeFrame.GestureRecognizers>
                     <TapGestureRecognizer
-                    Command="{Binding OnThemeTappedCommand}"
-                    CommandParameter="0"/>
+                        Command="{Binding OnThemeTappedCommand}"
+                        CommandParameter="0"/>
                 </components:ThemeFrame.GestureRecognizers>
             </components:ThemeFrame>
 
             <components:ThemeFrame Grid.Column="1" 
-                               Text="Light"
-                               IsSelected="{Binding IsLightThemeSelected}">
+                                   IconFontFamily="MDR"
+                                   Icon="{x:Static materialDesign:MaterialDesignIcons.LightMode}"
+                                   Text="Light"
+                                   IsSelected="{Binding IsLightThemeSelected}">
                 <components:ThemeFrame.GestureRecognizers>
                     <TapGestureRecognizer
-                    Command="{Binding OnThemeTappedCommand}"
-                    CommandParameter="1"/>
+                        Command="{Binding OnThemeTappedCommand}"
+                        CommandParameter="1"/>
                 </components:ThemeFrame.GestureRecognizers>
             </components:ThemeFrame>
 
             <components:ThemeFrame Grid.Column="2" 
-                               Text="Dark"
-                               IsSelected="{Binding IsDarkThemeSelected}">
+                                   IconFontFamily="MDR"
+                                   Icon="{x:Static materialDesign:MaterialDesignIcons.DarkMode}"
+                                   Text="Dark"
+                                   IsSelected="{Binding IsDarkThemeSelected}">
                 <components:ThemeFrame.GestureRecognizers>
                     <TapGestureRecognizer
                     Command="{Binding OnThemeTappedCommand}"
@@ -56,8 +64,6 @@
                              SelectedItem="{Binding SelectedLanguage}"
                              SelectionChangedCommand="{Binding LanguageChangedCommand}"
                              SelectorMaximumHeightRequest="150"/>
-
-        <Label Grid.Row="2" Text="{ext:Translate Main}" Style="{x:StaticResource LabelMedium}"/>
     </Grid>
 
 </ContentPage>

@@ -6,6 +6,8 @@
        xmlns:views="clr-namespace:MauiAppTemplate.Views"
        xmlns:rsx="clr-namespace:MauiAppTemplate.Resources.Languages"
        xmlns:ext="clr-namespace:MauiAppTemplate.Extensions"
+       xmlns:fontAwesome="clr-namespace:FontAwesome"
+       xmlns:materialDesign="clr-namespace:MaterialDesign"
        Style="{DynamicResource AppThemePage}"
        Title="ShellPage">
 
@@ -29,9 +31,17 @@
 
     <TabBar>
         <Tab Title="{ext:Translate Main}">
+            <Tab.Icon>
+                <FontImageSource FontFamily="MDR" 
+                                 Glyph="{x:Static materialDesign:MaterialDesignIcons.Person}" />
+            </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
         <Tab Title="{ext:Translate Settings}">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FAS" 
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.Gear}" />
+            </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
         </Tab>
     </TabBar>
