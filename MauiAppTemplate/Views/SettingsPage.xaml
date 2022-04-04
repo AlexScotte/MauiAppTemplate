@@ -64,7 +64,15 @@
                              Items="{Binding Languages}" 
                              SelectedItem="{Binding SelectedLanguage}"
                              SelectionChangedCommand="{Binding LanguageChangedCommand}"
-                             SelectorMaximumHeightRequest="150"/>
+                             SelectorMaximumHeightRequest="150"
+                             BackgroundColor="{AppThemeBinding Dark={StaticResource ElementBackgroundDark},
+                                                               Light={StaticResource ElementBackground}}"
+                             SelectorBackgroundColor="{AppThemeBinding Dark={StaticResource ElementBackgroundDark},
+                                                                       Light={StaticResource ElementBackground}}"
+                             TextColor="{AppThemeBinding Dark={StaticResource TextColorDark},
+                                                         Light={StaticResource TextColor}}"
+                             SelectorTextColor="{AppThemeBinding Dark={StaticResource TextColorDark},
+                                                                 Light={StaticResource TextColor}}"/>
     </Grid>
 
 </ContentPage>

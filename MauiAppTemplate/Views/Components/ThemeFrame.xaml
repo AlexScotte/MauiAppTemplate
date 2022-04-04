@@ -30,15 +30,43 @@
                    HorizontalTextAlignment="Center"
                    FontSize="30"
                    FontFamily="{Binding IconFontFamily, Source={x:Reference view}}" 
-                   Text="{Binding Icon, Source={x:Reference view}}"
-                   TextColor="{AppThemeBinding Dark={StaticResource TextColorDark},
-                                               Light={StaticResource TextColor}}"/>
+                   Text="{Binding Icon, Source={x:Reference view}}">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" 
+                                 Binding="{Binding IsSelected, Source={x:Reference view}}" 
+                                 Value="True">
+                        <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource PrimaryColorDark},
+                                                                             Light={StaticResource PrimaryColor}}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" 
+                             Binding="{Binding IsSelected, Source={x:Reference view}}" 
+                             Value="False">
+                        <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark},
+                                                                             Light={StaticResource TextColor}}"/>
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
 
             <Label 
                 Style="{StaticResource LabelSmall}"
                 HorizontalOptions="Fill" HorizontalTextAlignment="Center"
                 VerticalOptions="End" VerticalTextAlignment="End"
-                Text="{Binding Text, Source={x:Reference view}}" />
+                Text="{Binding Text, Source={x:Reference view}}">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" 
+                                 Binding="{Binding IsSelected, Source={x:Reference view}}" 
+                                 Value="True">
+                        <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource PrimaryColorDark},
+                                                                             Light={StaticResource PrimaryColor}}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" 
+                             Binding="{Binding IsSelected, Source={x:Reference view}}" 
+                             Value="False">
+                        <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark},
+                                                                             Light={StaticResource TextColor}}"/>
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
         </StackLayout>
     </Frame>
 </ContentView>

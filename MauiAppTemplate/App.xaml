@@ -7,15 +7,19 @@
 
             <!--<Color x:Key="PrimaryColor">#512bdf</Color>-->
             <Color x:Key="PrimaryColor">#6200EE</Color>
+            <Color x:Key="PrimaryVariantColor">#0035B3</Color>
             <Color x:Key="PrimaryColorDark">#BB86FC</Color>
+            <Color x:Key="PrimaryVariantColorDark">#0035B3</Color>
             <Color x:Key="SecondaryColor">White</Color>
+            <Color x:Key="SecondaryColorDark">#03DAC5</Color>
 
             <Color x:Key="TextColor">#121212</Color>
             <Color x:Key="TextColorDark">White</Color>
             <Color x:Key="BackgroundColor">#F2F2F7</Color>
             <Color x:Key="BackgroundColorDark">#121212</Color>
             <Color x:Key="ElementBackground">White</Color>
-            <Color x:Key="ElementBackgroundDark">#969698</Color>
+            <!--<Color x:Key="ElementBackgroundDark">#1C1C1E</Color>-->
+            <Color x:Key="ElementBackgroundDark">#222222</Color>
 
             <Style x:Key="BaseElement" TargetType="View">
                 <Setter Property="BackgroundColor" 
