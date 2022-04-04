@@ -27,17 +27,17 @@
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
         </ResourceDictionary>
-    </Shell.Resources>
+    </Shell.Resources> 
 
     <TabBar>
-        <Tab Title="{ext:Translate Main}">
+        <Tab Title="{ext:Translate Main_Tab}">
             <Tab.Icon>
                 <FontImageSource FontFamily="MDR" 
                                  Glyph="{x:Static materialDesign:MaterialDesignIcons.Person}" />
             </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
-        <Tab Title="{ext:Translate Settings}">
+        <Tab Title="{ext:Translate Settings_Tab}">
             <Tab.Icon>
                 <FontImageSource FontFamily="FAS" 
                                  Glyph="{x:Static fontAwesome:FontAwesomeIcons.Gear}" />

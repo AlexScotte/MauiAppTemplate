@@ -89,18 +89,16 @@
 	  <EmbeddedResource Update="Resources\Languages\AppResources.en.resx">
 	    <SubType>Designer</SubType>
 	    <LastGenOutput>AppResources.en.Designer.cs</LastGenOutput>
-	    <Generator>ResXFileCodeGenerator</Generator>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <CustomToolNamespace></CustomToolNamespace>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\Languages\AppResources.resx">
 	    <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
-	    <Generator>ResXFileCodeGenerator</Generator>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
 	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Components\AppThemeIcon.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\ComboBox.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

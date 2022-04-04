@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:components="clr-namespace:MauiAppTemplate.Views.Components"
+             xmlns:appResources="clr-namespace:MauiAppTemplate.Resources.Languages"
              xmlns:ext="clr-namespace:MauiAppTemplate.Extensions"
              xmlns:fontAwesome="clr-namespace:FontAwesome"
              xmlns:materialDesign="clr-namespace:MaterialDesign"
              x:Class="MauiAppTemplate.Views.SettingsPage"
              x:Name="page"
-             Title="SettingsPage">
+             Title="{ext:Translate SettingsPage_Title}">
 
     <Grid RowDefinitions="Auto, Auto, Auto"
           Padding="10,10,10,10"
@@ -24,7 +25,7 @@
             <components:ThemeFrame Grid.Column="0"
                                    IconFontFamily="MDR"
                                    Icon="{x:Static materialDesign:MaterialDesignIcons.Smartphone}"
-                                   Text="System" 
+                                   Text="{ext:Translate SettingsPage_SystemTheme}"
                                    IsSelected="{Binding IsSystemThemeSelected}" >
                 <components:ThemeFrame.GestureRecognizers>
                     <TapGestureRecognizer
@@ -36,7 +37,7 @@
             <components:ThemeFrame Grid.Column="1" 
                                    IconFontFamily="MDR"
                                    Icon="{x:Static materialDesign:MaterialDesignIcons.LightMode}"
-                                   Text="Light"
+                                   Text="{ext:Translate SettingsPage_LightTheme}"
                                    IsSelected="{Binding IsLightThemeSelected}">
                 <components:ThemeFrame.GestureRecognizers>
                     <TapGestureRecognizer
@@ -48,7 +49,7 @@
             <components:ThemeFrame Grid.Column="2" 
                                    IconFontFamily="MDR"
                                    Icon="{x:Static materialDesign:MaterialDesignIcons.DarkMode}"
-                                   Text="Dark"
+                                   Text="{ext:Translate SettingsPage_DarkTheme}"
                                    IsSelected="{Binding IsDarkThemeSelected}">
                 <components:ThemeFrame.GestureRecognizers>
                     <TapGestureRecognizer
