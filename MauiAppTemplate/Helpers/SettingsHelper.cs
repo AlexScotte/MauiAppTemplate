@@ -1,4 +1,5 @@
 ﻿using MauiAppTemplate.Enums;
+using MauiAppTemplate.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,11 @@ namespace MauiAppTemplate.Helpers
             set => Preferences.Set(nameof(Theme), value);
         }
 
-        static string languagePreference = Languages.FR.ToString().ToLower();
+        static string languagePreference = Languages.FR.GetDisplayAttribute(AttributeProperty.Description);
         public static string LanguagePreference
         {
             get => Preferences.Get(nameof(LanguagePreference), languagePreference);
-            set => Preferences.Set(nameof(LanguagePreference), value.ToLower());
+            set => Preferences.Set(nameof(LanguagePreference), value);
         }
     }
 }

@@ -9,16 +9,16 @@ namespace MauiAppTemplate.Enums
 {
     public enum Languages
     {
-        [Display(Name = "Français")]
+        [Display(Name = "Français", Description = "fr-FR")]
         FR,
 
-        [Display(Name = "English")]
-        EN,
+        [Display(Name = "English", Description = "en-GB")]
+        GB,
 
-        //[Display(Name = "Deutsch")]
-        //DE,
+        [Display(Name = "Deutsch", Description = "de-DE")]
+        DE,
 
-        //[Display(Name = "Español")]
-        //ES,
+        [Display(Name = "Español", Description = "es-ES")]
+        ES,
     }
 }

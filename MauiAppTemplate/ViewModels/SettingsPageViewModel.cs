@@ -51,19 +51,21 @@ namespace MauiAppTemplate.ViewModels
                 Languages.Add(new()
                 {
                     Data = language,
-                    Label = language.GetDisplayAttribute(AttributeProperty.Name),
+                    Label = $"{IsoCountryCodeToFlagEmoji(language.ToString())}   {language.GetDisplayAttribute(AttributeProperty.Name)}",
                 });
             }
 
-            SelectedLanguage = Languages.FirstOrDefault(l => l.Data.ToString().ToLower() == SettingsHelper.LanguagePreference);
+            SelectedLanguage = Languages.FirstOrDefault(l => l.Data.ToString() == SettingsHelper.LanguagePreference);
         }
+
+        public string IsoCountryCodeToFlagEmoji(string countryCode) => string.Concat(countryCode.ToUpper().Select(x => char.ConvertFromUtf32(x + 0x1F1A5)));
 
         private void OnLanguageChanged(ComboBox.Item arg)
         {
             if(arg != null && arg.Data is Languages newLanguage)
             {
                 SettingsHelper.LanguagePreference = newLanguage.ToString();
-                ResourceLoader.Instance.SetCultureInfo(new CultureInfo(SettingsHelper.LanguagePreference));
+                ResourceLoader.Instance.SetCultureInfo(new CultureInfo(newLanguage.GetDisplayAttribute(AttributeProperty.Description)));
             }
         }
 
