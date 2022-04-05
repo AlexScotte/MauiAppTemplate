@@ -1,5 +1,12 @@
 ﻿using System;
 
+/* *************************************************
+ * 
+ * Press F to pay respect to matthewrdev for this
+ * https://github.com/matthewrdev/md2cs
+ * 
+ * **************************************************/
+
 namespace MaterialDesign
 {
     /// <summary>
