@@ -22,7 +22,7 @@ namespace MauiAppTemplate.Resources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    public class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MauiAppTemplate.Resources.Languages {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MauiAppTemplate.Resources.Languages.AppResources", typeof(AppResources).Assembly);
@@ -51,7 +51,7 @@ namespace MauiAppTemplate.Resources.Languages {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace MauiAppTemplate.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Principale.
         /// </summary>
-        internal static string Main_Tab {
+        public static string Main_Tab {
             get {
                 return ResourceManager.GetString("Main_Tab", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace MauiAppTemplate.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Principale.
         /// </summary>
-        internal static string MainPage_Title {
+        public static string MainPage_Title {
             get {
                 return ResourceManager.GetString("MainPage_Title", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace MauiAppTemplate.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Paramètres.
         /// </summary>
-        internal static string Settings_Tab {
+        public static string Settings_Tab {
             get {
                 return ResourceManager.GetString("Settings_Tab", resourceCulture);
             }
@@ -90,16 +90,25 @@ namespace MauiAppTemplate.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Sombre.
         /// </summary>
-        internal static string SettingsPage_DarkTheme {
+        public static string SettingsPage_DarkTheme {
             get {
                 return ResourceManager.GetString("SettingsPage_DarkTheme", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Langue.
+        /// </summary>
+        public static string SettingsPage_Language {
+            get {
+                return ResourceManager.GetString("SettingsPage_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clair.
         /// </summary>
-        internal static string SettingsPage_LightTheme {
+        public static string SettingsPage_LightTheme {
             get {
                 return ResourceManager.GetString("SettingsPage_LightTheme", resourceCulture);
             }
@@ -108,16 +117,25 @@ namespace MauiAppTemplate.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Système.
         /// </summary>
-        internal static string SettingsPage_SystemTheme {
+        public static string SettingsPage_SystemTheme {
             get {
                 return ResourceManager.GetString("SettingsPage_SystemTheme", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thème.
+        /// </summary>
+        public static string SettingsPage_Theme {
+            get {
+                return ResourceManager.GetString("SettingsPage_Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mes paramètres.
         /// </summary>
-        internal static string SettingsPage_Title {
+        public static string SettingsPage_Title {
             get {
                 return ResourceManager.GetString("SettingsPage_Title", resourceCulture);
             }
