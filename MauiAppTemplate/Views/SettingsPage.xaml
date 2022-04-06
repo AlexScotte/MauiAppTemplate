@@ -42,16 +42,16 @@
             </StackLayout>
 
             <Grid Grid.Row="1"
-              HeightRequest="100"
-              ColumnDefinitions="*,*,*"
-              ColumnSpacing="10"
-              HorizontalOptions="Start">
+                  HeightRequest="100"
+                  ColumnDefinitions="*,*,*"
+                  ColumnSpacing="10"
+                  HorizontalOptions="Start">
 
                 <components:ThemeFrame Grid.Column="0"
-                                   IconFontFamily="MDR"
-                                   Icon="{x:Static materialDesign:MaterialDesignIcons.Smartphone}"
-                                   Text="{ext:Translate SettingsPage_SystemTheme}"
-                                   IsSelected="{Binding IsSystemThemeSelected}" >
+                                       IconFontFamily="MDR"
+                                       Icon="{x:Static materialDesign:MaterialDesignIcons.Smartphone}"
+                                       Text="{ext:Translate SettingsPage_SystemTheme}"
+                                       IsSelected="{Binding IsSystemThemeSelected}" >
                     <components:ThemeFrame.GestureRecognizers>
                         <TapGestureRecognizer
                         Command="{Binding OnThemeTappedCommand}"
@@ -60,10 +60,10 @@
                 </components:ThemeFrame>
 
                 <components:ThemeFrame Grid.Column="1" 
-                                   IconFontFamily="MDR"
-                                   Icon="{x:Static materialDesign:MaterialDesignIcons.LightMode}"
-                                   Text="{ext:Translate SettingsPage_LightTheme}"
-                                   IsSelected="{Binding IsLightThemeSelected}">
+                                       IconFontFamily="MDR"
+                                       Icon="{x:Static materialDesign:MaterialDesignIcons.LightMode}"
+                                       Text="{ext:Translate SettingsPage_LightTheme}"
+                                       IsSelected="{Binding IsLightThemeSelected}">
                     <components:ThemeFrame.GestureRecognizers>
                         <TapGestureRecognizer
                         Command="{Binding OnThemeTappedCommand}"

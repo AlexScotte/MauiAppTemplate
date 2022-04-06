@@ -1,3 +1,5 @@
+using MauiAppTemplate.Enums;
+
 namespace MauiAppTemplate.Views.Components;
 
 public partial class ThemeFrame : ContentView
@@ -18,13 +20,13 @@ public partial class ThemeFrame : ContentView
 	public static readonly BindableProperty IconFontFamilyProperty =
 	BindableProperty.Create(
 		nameof(IconFontFamily),
-		typeof(string),
+		typeof(IconFontFamily),
 		typeof(ThemeFrame),
-		defaultValue: string.Empty);
+		defaultValue: IconFontFamily.FAS);
 
-	public string IconFontFamily
+	public IconFontFamily IconFontFamily
 	{
-		get { return (string)GetValue(IconFontFamilyProperty); }
+		get { return (IconFontFamily)GetValue(IconFontFamilyProperty); }
 		set { SetValue(IconFontFamilyProperty, value); }
 	}
 

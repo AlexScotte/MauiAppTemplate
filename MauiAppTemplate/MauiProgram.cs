@@ -3,6 +3,7 @@ using CommunityToolkit.Maui;
 using MauiAppTemplate.Services;
 using System.Globalization;
 using MauiAppTemplate.ViewModels;
+using MauiAppTemplate.Enums;
 
 namespace MauiAppTemplate;
 
@@ -20,10 +21,10 @@ public static class MauiProgram
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("fa-brands-400.ttf", "FAB");
-				fonts.AddFont("fa-regular-400.ttf", "FAR");
-				fonts.AddFont("fa-solid-900.ttf", "FAS");
-				fonts.AddFont("MaterialIcons-Regular.ttf", "MDR");
+				fonts.AddFont("fa-brands-400.ttf", IconFontFamily.FAB.ToString());
+				fonts.AddFont("fa-regular-400.ttf", IconFontFamily.FAR.ToString());
+				fonts.AddFont("fa-solid-900.ttf", IconFontFamily.FAS.ToString());
+				fonts.AddFont("MaterialIcons-Regular.ttf", IconFontFamily.MDR.ToString());
 			});
 
         #region View model

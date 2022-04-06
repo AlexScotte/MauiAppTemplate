@@ -6,6 +6,8 @@
        xmlns:views="clr-namespace:MauiAppTemplate.Views"
        xmlns:rsx="clr-namespace:MauiAppTemplate.Resources.Languages"
        xmlns:ext="clr-namespace:MauiAppTemplate.Extensions"
+       xmlns:enums="clr-namespace:MauiAppTemplate.Enums"
+       xmlns:converters="clr-namespace:MauiAppTemplate.Converters"
        xmlns:fontAwesome="clr-namespace:FontAwesome"
        xmlns:materialDesign="clr-namespace:MaterialDesign"
        Style="{DynamicResource AppThemePage}"
@@ -26,20 +28,24 @@
             </Style>
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
+
+            <converters:EnumToStringConverter x:Key="EnumToStringConverter"/>
+
         </ResourceDictionary>
     </Shell.Resources> 
 
+    
     <TabBar>
         <Tab Title="{ext:Translate Main_Tab}">
             <Tab.Icon>
-                <FontImageSource FontFamily="MDR" 
+                <FontImageSource FontFamily="{Binding Source={x:Static enums:IconFontFamily.MDR}, Converter={StaticResource EnumToStringConverter}}" 
                                  Glyph="{x:Static materialDesign:MaterialDesignIcons.Person}" />
             </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
         <Tab Title="{ext:Translate Settings_Tab}">
             <Tab.Icon>
-                <FontImageSource FontFamily="FAS" 
+                <FontImageSource FontFamily="{Binding Source={x:Static enums:IconFontFamily.FAS}, Converter={StaticResource EnumToStringConverter}}" 
                                  Glyph="{x:Static fontAwesome:FontAwesomeIcons.Gear}" />
             </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
