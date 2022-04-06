@@ -15,7 +15,8 @@ namespace MauiAppTemplate.Views.Components
                 nameof(LineColor),
                 typeof(Color),
                 typeof(Line),
-                defaultValue: Colors.Black);
+                defaultValue: Colors.Black,
+                propertyChanged: BindablePropertyChanged);
 
         public Color LineColor
         {
@@ -114,6 +115,12 @@ namespace MauiAppTemplate.Views.Components
                     canvas.DrawPath(path);
                 }
             }
+        }
+
+        private static void BindablePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is Line line)
+                line.Invalidate();
         }
     }
 }
